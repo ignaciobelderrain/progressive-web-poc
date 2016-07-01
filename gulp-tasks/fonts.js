@@ -20,19 +20,19 @@ var del = require('del');
 var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 
-gulp.task('images:watch', function() {
-  gulp.watch(GLOBAL.config.src + '/images/**/*.*', ['images']);
+gulp.task('fonts:watch', function() {
+  gulp.watch(GLOBAL.config.src + '/fonts/**/*.*', ['fonts']);
 });
 
-gulp.task('images:clean', function(cb) {
-  del([GLOBAL.config.dest + '/*.{png,jpg,jpeg,gif,svg}'], {dot: true})
+gulp.task('fonts:clean', function(cb) {
+  del([GLOBAL.config.dest + '/*.{otf,ttf}'], {dot: true})
     .then(function() {
       cb();
     });
 });
 
-gulp.task('images', ['images:clean'], function() {
-  return gulp.src(GLOBAL.config.src + '/**/*.{png,jpg,jpeg,gif,svg}')
+gulp.task('fonts', ['fonts:clean'], function() {
+  return gulp.src(GLOBAL.config.src + '/**/*.{otf,ttf}')
     .pipe(gulpif(GLOBAL.config.env == 'prod', imagemin({
       progressive: true,
       interlaced: true,

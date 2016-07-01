@@ -3,7 +3,7 @@ export default class PageController {
     this.loader = document.querySelector('.js-global-loader');
     this.mainContainer = document.querySelector('.js-global-main');
 
-    this.DEFAULT_TITLE = 'App Shell';
+    this.DEFAULT_TITLE = 'Discover';
   }
 
   onUpdate() {

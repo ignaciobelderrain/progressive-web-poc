@@ -52,7 +52,7 @@ GLOBAL.config = {
   }
 };
 
-var allTasks = ['styles', 'scripts', 'copy', 'html', 'images'];
+var allTasks = ['styles', 'scripts', 'copy', 'html', 'images', 'fonts'];
 gulp.task('default', function(cb) {
   runSequence(
     'clean',
